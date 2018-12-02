@@ -19,6 +19,30 @@ var customerData = {
 
 function greetCustomer(firstName) {
   var greeting = '';
+  // your code here
+  switch(true) {
+    case (customerData[firstName] === undefined): 
+      greeting = 'Welcome! Is this your first time?';
+     break;
+
+    case (customerData[firstName].visits === 1): 
+      greeting = 'Welcome back, ' + firstName + '! We\'re glad you liked us the first time!';
+    break;
+    
+    case (customerData[firstName].visits > 1): 
+      greeting = 'Welcome back, ' + firstName + '! So glad to see you again!';
+    break;
+  }
+  return greeting;
+}
+
+
+//OR
+
+
+
+function greetCustomer(firstName) {
+  var greeting = '';
 
   if (customerData[firstName] === undefined) {
     greeting = 'Welcome! Is this your first time?';
